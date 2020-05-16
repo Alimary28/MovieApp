@@ -4,14 +4,15 @@ using System.IO;
 
 public enum Genre 
 {
-	Comedy,
-	Adventures,
-	Animation,
-	Action,
-	Drama,
-	Thriller,
-	Horror,
-	Crime
+	comedy,
+	adventure,
+	animation,
+	action,
+	drama,
+	thriller,
+	horror,
+	crime,
+	fantasy
 
 }
 public class MovieItem
@@ -19,7 +20,7 @@ public class MovieItem
 	public long Id { get; set; }
 	public string Title { get; set; }
 	public string Description { get; set; }
-	public string Genre { get; set; }
+	public Genre Genre { get; set; }
 	public int Duration { get; set; }
 	public int ReleaseYear { get; set; }
 	public string Director { get; set; }
