@@ -10,5 +10,6 @@ namespace MovieApp.Models
         }
 
         public DbSet<MovieItem> MovieItems { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

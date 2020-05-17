@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MovieApp.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 
@@ -30,5 +32,5 @@ public class MovieItem
 	public string Watched { get; set; }
 
 	public bool isWatched;
-	
+	public List<Comment> Comments { get; set; }
 }

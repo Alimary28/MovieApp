@@ -14,6 +14,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using FileContextCore;
 using System.Text.Json.Serialization;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using System.Reflection;
 
 namespace MovieApp
 {
@@ -30,13 +33,15 @@ namespace MovieApp
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddControllers().AddJsonOptions(options => 
+                .AddControllers().AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                     options.JsonSerializerOptions.IgnoreNullValues = true;
-                });
+                })
+            .AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
             services
-             .AddDbContext<MovieContext>(opt => opt.UseFileContextDatabase("MovieList"));
+             .AddDbContext<MovieContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MoviesDbConnectionString")));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
