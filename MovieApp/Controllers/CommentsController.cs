@@ -73,10 +73,10 @@ namespace MovieApp.Controllers
             return NoContent();
         }
 
-        // POST: api/Comments
+        // POST: api/Comments/1
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
+        [HttpPost("{movieItemId}")]
         public async Task<ActionResult<Comment>> PostComment(Comment comment)
         {
             _context.Comments.Add(comment);
