@@ -29,16 +29,17 @@ namespace MovieApp.Controllers
 
         // GET: api/Comments/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Comment>> GetComment(long id)
+        public async Task<ActionResult<IList<string>>> GetComment(long id)
         {
-            var comment = await _context.Comments.FindAsync(id);
-
-            if (comment == null)
+            // var comment = await _context.Comments.FindAsync(id);
+            var movieComment = await _context.MovieItems.FindAsync(id);
+            if (movieComment == null)
             {
                 return NotFound();
             }
-
-            return comment;
+            IEnumerable<Comment> Comment = await _context.Comments.ToListAsync();
+            List<string> Texts = Comment.Where(c => c.MovieItemId == movieComment.Id).Select(c => c.Text).ToList();
+            return Texts;
         }
 
         // PUT: api/Comments/5
