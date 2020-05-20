@@ -27,7 +27,6 @@ public class MovieItem
 	public int ReleaseYear { get; set; }
 	public string Director { get; set; }
 	public DateTime AddedDate { get; set; }
-	[Range(1.0,10.0)]
 	public int Rating { get; set; }
 	public string Watched { get; set; }
 

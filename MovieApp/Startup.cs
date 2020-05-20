@@ -11,8 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MovieApp.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using FileContextCore;
 using System.Text.Json.Serialization;
 using FluentValidation.AspNetCore;
 using FluentValidation;
@@ -38,9 +36,9 @@ namespace MovieApp
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                     options.JsonSerializerOptions.IgnoreNullValues = true;
                 })
-            .AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly()));
             services
-             .AddDbContext<MovieContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MoviesDbConnectionString")));
+                .AddDbContext<MovieContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MoviesDbConnectionString")));
             
         }
 
