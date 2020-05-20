@@ -18,10 +18,10 @@ namespace MovieApp.ModelValidators
             RuleFor(x => x.AddedDate)
                 .LessThanOrEqualTo(DateTime.Now)
                 .WithMessage($"Date must be less than or equal to {DateTime.Now}");
-            RuleFor(x => x.Comments)
-                .Must(list => list.Count < 10)
-                .WithMessage("The number of comments must be less than 10");
-            
+            //RuleFor(x => x.Comments)
+            //    .Must(list => list.Count < 10)
+            //    .WithMessage("The number of comments must be less than 10");
+
         }
     }
 }
