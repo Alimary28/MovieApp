@@ -16,9 +16,6 @@ namespace MovieApp.ModelValidators
             RuleFor(x => x.Text)
                 .MinimumLength(5)
                 .MaximumLength(150);
-            RuleFor(x => x.MovieItemId)
-                .Equal(x => x.MovieItem.Id)
-                .WithMessage("The movieId doesn't exist");
         }
     }
 }

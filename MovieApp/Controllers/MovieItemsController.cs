@@ -81,7 +81,8 @@ namespace MovieApp.Controllers
             
             IEnumerable<MovieItem> movieItems = await _context.MovieItems.ToListAsync();
             
-            return movieItems.Where(t => t.AddedDate >= addedDateFrom && t.AddedDate <= addedDateTo).OrderByDescending(t => t.ReleaseYear).ToList();
+            return movieItems.Where(t => t.AddedDate >= addedDateFrom && t.AddedDate <= addedDateTo)
+                .OrderByDescending(t => t.ReleaseYear).ToList();
         }
 
         // PUT: api/MovieItems/5

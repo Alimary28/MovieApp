@@ -41,7 +41,7 @@ namespace MovieApp.Controllers
         /// <returns>A list of comments for a Movie object</returns>
         /// <response code="200">Returns 200 if the request was succesfully completed</response>
         /// <response code="404">Returns 404 if the object was not found</response>
-        [HttpGet("{movieItemId}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IList<string>>> GetComment(long id)
