@@ -35,27 +35,41 @@ namespace MovieApp.Controllers
 
         // GET: api/Comments/5
         /// <summary>
-        /// Gets a list with all text comments for a movie based on Movie id
+        /// Gets a comment based on its id
         /// </summary>
-        /// <param name="id">Search the Movie with the given id</param>
-        /// <returns>A list of comments for a Movie object</returns>
+        /// <param name="id">Search the Comments with the given id</param>
+        /// <returns>A Comment object</returns>
         /// <response code="200">Returns 200 if the request was succesfully completed</response>
         /// <response code="404">Returns 404 if the object was not found</response>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IList<string>>> GetComment(long id)
+
+        public async Task<ActionResult<Comment>> GetComment(long id)
         {
-            // var comment = await _context.Comments.FindAsync(id);
-            var movieComment = await _context.MovieItems.FindAsync(id);
-            if (movieComment == null)
+            var comment = await _context.Comments.FindAsync(id);
+
+            if (comment == null)
             {
                 return NotFound();
             }
-            IEnumerable<Comment> Comment = await _context.Comments.ToListAsync();
-            List<string> Texts = Comment.Where(c => c.MovieItemId == movieComment.Id).Select(c => c.Text).ToList();
-            return Texts;
+
+            return comment;
         }
+
+
+        //public async Task<ActionResult<IList<string>>> GetComment(long id)
+        //{
+        //    // var comment = await _context.Comments.FindAsync(id);
+        //    var movieComment = await _context.MovieItems.FindAsync(id);
+        //    if (movieComment == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    IEnumerable<Comment> Comment = await _context.Comments.ToListAsync();
+        //    List<string> Texts = Comment.Where(c => c.MovieItemId == movieComment.Id).Select(c => c.Text).ToList();
+        //    return Texts;
+        //}
 
         // PUT: api/Comments/5
         /// <summary>

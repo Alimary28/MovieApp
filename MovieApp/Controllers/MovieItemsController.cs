@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Description;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,36 +29,60 @@ namespace MovieApp.Controllers
         /// <summary>
         /// Gets a list of all movies
         /// </summary>
-        /// <returns>A list of Movie objects</returns>
+        /// <returns>A list of MovieDto objects</returns>
         /// <response code="200">Returns 200 if the request was succesfully completed</response>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<IEnumerable<MovieItem>>> GetMovieItems()
+        public IQueryable<MovieDto> GetMovieItems()
         {
-            return await _context.MovieItems.ToListAsync();
+            var movies = from m in _context.MovieItems
+                         select new MovieDto()
+                         {
+                             Id = m.Id,
+                             Title = m.Title
+                         };
+
+            return movies;
         }
 
         // GET: api/MovieItems/5
         /// <summary>
-        /// Gets a movie object with the given id
+        /// Gets the movie object details with the given id containing the list of comments
         /// </summary>
         /// <param name="id">Search the movie with the given id</param>
-        /// <returns>A movie object if id exists or NotFound object</returns>
+        /// <returns>Returns a movie details object of type MovieDetailDto</returns>
         /// <response code="200">Returns 200 if the request was succesfully completed</response>
         /// <response code="404">Returns Not Found if the object is null</response>
         [HttpGet("{id}")]
+        [ResponseType(typeof(MovieDetailDto))]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<MovieItem>> GetMovieItem(long id)
+
+        public async Task<ActionResult<MovieDetailDto>> GetMovieItem(long id)
         {
-            var movieItem = await _context.MovieItems.FindAsync(id);
+            var movieItem = await _context.MovieItems.Select(m =>
+            new MovieDetailDto()
+            {
+                Id = m.Id,
+                Title = m.Title,
+                Description = m.Description,
+                Genre = m.Genre,
+                Duration = m.Duration,
+                ReleaseYear = m.ReleaseYear,
+                Director = m.Director,
+                AddedDate = m.AddedDate,
+                Rating = m.Rating,
+                Watched = m.Watched,
+                Comments = m.Comments.Select(c => c.Text).ToList()
+
+            }).SingleOrDefaultAsync(m => m.Id == id);
 
             if (movieItem == null)
             {
                 return NotFound();
             }
 
-            return movieItem;
+            return Ok(movieItem);
         }
 
         // GET: api/MovieItems/2019-03-11T17:31:00/2019-03-12T22:30:00
@@ -150,6 +175,22 @@ namespace MovieApp.Controllers
                 _context.MovieItems.Add(movieItem);
                 await _context.SaveChangesAsync();
 
+                //_context.Entry(movieItem).Reference(x => x.Comments).Load();
+                //var dto = new MovieDetailDto()
+                //{
+                //    Id = movieItem.Id,
+                //    Title = movieItem.Title,
+                //    Description = movieItem.Description,
+                //    Genre = movieItem.Genre,
+                //    Duration = movieItem.Duration,
+                //    ReleaseYear = movieItem.ReleaseYear,
+                //    Director = movieItem.Director,
+                //    AddedDate = movieItem.AddedDate,
+                //    Rating = movieItem.Rating,
+                //    Watched = movieItem.Watched,
+                //    Comments = movieItem.Comments.Select(c => c.Text).ToList()
+                //};
+
                 return CreatedAtAction(nameof(GetMovieItem), new { id = movieItem.Id }, movieItem);
             }
             else if (movieItem.Watched.Equals("no"))
@@ -165,6 +206,28 @@ namespace MovieApp.Controllers
                 return BadRequest("Value of watched must be yes or no");  
             }
             
+        }
+
+        // POST: api/MovieItem/1/Comment
+        /// <summary>
+        /// Search a movie with the given id and adds a new comment for that movie
+        /// </summary>
+        /// <param name="id">Search the movie with the given id</param>
+        /// <param name="comment">Adds a new comment for that movie</param>
+        /// <returns>OK response if the request was succesfully completed</returns>
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPost("{id}/Comment")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<Comment>> PostComment(long id, Comment comment)
+        {
+            var movieItem = await _context.MovieItems.FindAsync(id);
+            comment.MovieItemId = movieItem.Id;
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+            movieItem.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+            return Ok();
         }
 
         // DELETE: api/MovieItems/5

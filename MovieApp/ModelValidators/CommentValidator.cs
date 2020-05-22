@@ -16,6 +16,7 @@ namespace MovieApp.ModelValidators
             RuleFor(x => x.Text)
                 .MinimumLength(5)
                 .MaximumLength(150);
+            
         }
     }
 }
