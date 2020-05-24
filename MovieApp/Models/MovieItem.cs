@@ -32,4 +32,6 @@ public class MovieItem
 
 	public bool isWatched;
 	public List<Comment> Comments { get; set; }
+
+	public int NumberOfComments { get; }
 }

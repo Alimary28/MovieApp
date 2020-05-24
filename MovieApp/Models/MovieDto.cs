@@ -9,6 +9,8 @@ namespace MovieApp.Models
     {
         public long Id { get; set; }
         public string Title { get; set; }
-        public List<string> Comments { get; set; }
+
+        //public List<string> Comments { get; set; }
+        public int NumberOfComments { get; set; }
     }
 }

@@ -1,0 +1,74 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!forecasts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.date }}</td>
+      <td>{{ forecast.temperatureC }}</td>
+      <td>{{ forecast.temperatureF }}</td>
+      <td>{{ forecast.summary }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movies">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Genre</th>
+      <th>Duration</th>
+      <th>Realease year</th>
+      <th>Director</th>
+      <th>Rating</th>
+      <th>Watched</th>
+      <th>Number of comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>{{ movie.id }}<td>
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.description }}</td>
+      <td>{{ movie.genre }}</td>
+      <td>{{ movie.duration }}</td>
+      <td>{{ movie.releaseYear }}</td>
+      <td>{{ movie.director }}</td>
+      <td>{{ movie.rating }}</td>
+      <td>{{ movie.watched }}</td>
+      <td>{{ movie.numberOfComments }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="comments">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Text</th>
+      <th>Important</th>
+      <th>MovieId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comment of comments">
+      <td>{{ comment.id }}</td>
+      <td>{{ comment.text }}</td>
+      <td>{{ comment.important }}</td>
+      <td>{{ comment.movieId }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -39,7 +39,8 @@ namespace MovieApp.Controllers
                          select new MovieDto()
                          {
                              Id = m.Id,
-                             Title = m.Title
+                             Title = m.Title,
+                             NumberOfComments = m.Comments.Count()
                          };
 
             return movies;
