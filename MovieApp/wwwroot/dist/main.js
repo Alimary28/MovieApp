@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1 id=\"tableLabel\">Weather forecast</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<p *ngIf=\"!forecasts\"><em>Loading...</em></p>\r\n\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"forecasts\">\r\n  <thead>\r\n    <tr>\r\n      <th>Date</th>\r\n      <th>Temp. (C)</th>\r\n      <th>Temp. (F)</th>\r\n      <th>Summary</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let forecast of forecasts\">\r\n      <td>{{ forecast.date }}</td>\r\n      <td>{{ forecast.temperatureC }}</td>\r\n      <td>{{ forecast.temperatureF }}</td>\r\n      <td>{{ forecast.summary }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Number of comments</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}<td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.numberOfComments }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"comments\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Text</th>\r\n      <th>Important</th>\r\n      <th>MovieId</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let comment of comments\">\r\n      <td>{{ comment.id }}</td>\r\n      <td>{{ comment.text }}</td>\r\n      <td>{{ comment.important }}</td>\r\n      <td>{{ comment.movieId }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--<h1 id=\"tableLabel\">Weather forecast</h1>-->\r\n<h1 id=\"tableLabel\">Multimedia Center</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<!--<p *ngIf=\"!forecasts\"><em>Loading...</em></p>-->\r\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\r\n\r\n<!--<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"forecasts\">\r\n  <thead>\r\n    <tr>\r\n      <th>Date</th>\r\n      <th>Temp. (C)</th>\r\n      <th>Temp. (F)</th>\r\n      <th>Summary</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let forecast of forecasts\">\r\n      <td>{{ forecast.date }}</td>\r\n      <td>{{ forecast.temperatureC }}</td>\r\n      <td>{{ forecast.temperatureF }}</td>\r\n      <td>{{ forecast.summary }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>-->\r\n<h3>Movies</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Number of comments</th>\r\n      <th colspan=\"4\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.numberOfComments }}</td>\r\n      <td><a [routerLink]=\"['/movie-details']\">Details</a></td>\r\n      <td><a href=\"api/MovieItems\">Add movie</a></td>\r\n      <td><a href=\"api/MovieItems/{{movie.id}}\">Update movie</a></td>\r\n      <td><a href=\"api/MovieItems/{{movie.id}}\">Delete movie</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<h3>Comments</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"comments\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Text</th>\r\n      <th>Important</th>\r\n      <th>MovieId</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let comment of comments\">\r\n      <td>{{ comment.id }}</td>\r\n      <td>{{ comment.text }}</td>\r\n      <td>{{ comment.important }}</td>\r\n      <td>{{ comment.movieId }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n");
 
 /***/ }),
 
@@ -48,7 +48,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>\r\n  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>\r\n</ul>\r\n<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Multimedia center</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>\r\n  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>\r\n</ul>\r\n<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/movie-details/movie-details.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/movie-details/movie-details.component.html ***!
+  \**************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h3 id=\"tableLabel\">Movie details:</h3>\n\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Comments</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.comments }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\n");
 
 /***/ }),
 
@@ -145,6 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./counter/counter.component */ "./src/app/counter/counter.component.ts");
 /* harmony import */ var _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fetch-data/fetch-data.component */ "./src/app/fetch-data/fetch-data.component.ts");
+/* harmony import */ var _movie_details_movie_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./movie-details/movie-details.component */ "./src/app/movie-details/movie-details.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -164,6 +178,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -173,7 +188,8 @@ AppModule = __decorate([
             _nav_menu_nav_menu_component__WEBPACK_IMPORTED_MODULE_6__["NavMenuComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
             _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"],
-            _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"]
+            _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"],
+            _movie_details_movie_details_component__WEBPACK_IMPORTED_MODULE_10__["MovieDetailsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"].withServerTransition({ appId: 'ng-cli-universal' }),
@@ -183,6 +199,7 @@ AppModule = __decorate([
                 { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], pathMatch: 'full' },
                 { path: 'counter', component: _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"] },
                 { path: 'fetch-data', component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"] },
+                { path: 'movie-details', component: _movie_details_movie_details_component__WEBPACK_IMPORTED_MODULE_10__["MovieDetailsComponent"] }
             ])
         ],
         providers: [],
@@ -265,9 +282,9 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 let FetchDataComponent = class FetchDataComponent {
     constructor(http, baseUrl) {
-        http.get(baseUrl + 'weatherforecast').subscribe(result => {
-            this.forecasts = result;
-        }, error => console.error(error));
+        //http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
+        //  this.forecasts = result;
+        //}, error => console.error(error));
         http.get(baseUrl + 'api/MovieItems').subscribe(result => {
             this.movies = result;
             console.log(this.movies);
@@ -291,6 +308,24 @@ FetchDataComponent = __decorate([
     __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
 ], FetchDataComponent);
 
+//interface WeatherForecast {
+//  date: string;
+//  temperatureC: number;
+//  temperatureF: number;
+//  summary: string;
+//}
+var Genre;
+(function (Genre) {
+    Genre[Genre["comedy"] = 1] = "comedy";
+    Genre[Genre["adventure"] = 2] = "adventure";
+    Genre[Genre["animation"] = 3] = "animation";
+    Genre[Genre["action"] = 4] = "action";
+    Genre[Genre["drama"] = 5] = "drama";
+    Genre[Genre["thriller"] = 6] = "thriller";
+    Genre[Genre["horror"] = 7] = "horror";
+    Genre[Genre["crime"] = 8] = "crime";
+    Genre[Genre["fantasy"] = 9] = "fantasy";
+})(Genre || (Genre = {}));
 
 
 /***/ }),
@@ -325,6 +360,86 @@ HomeComponent = __decorate([
     })
 ], HomeComponent);
 
+
+
+/***/ }),
+
+/***/ "./src/app/movie-details/movie-details.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/movie-details/movie-details.component.css ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vdmllLWRldGFpbHMvbW92aWUtZGV0YWlscy5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/movie-details/movie-details.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/movie-details/movie-details.component.ts ***!
+  \**********************************************************/
+/*! exports provided: MovieDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovieDetailsComponent", function() { return MovieDetailsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+let MovieDetailsComponent = class MovieDetailsComponent {
+    constructor(http, baseUrl) {
+        http.get(baseUrl + 'api/MovieItems/{id}').subscribe(result => {
+            this.movie = result;
+            console.log(this.movie);
+        }, error => console.error(error));
+    }
+};
+MovieDetailsComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] }
+];
+MovieDetailsComponent = __decorate([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+        selector: 'app-movie-details',
+        template: __importDefault(__webpack_require__(/*! raw-loader!./movie-details.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/movie-details/movie-details.component.html")).default,
+        styles: [__importDefault(__webpack_require__(/*! ./movie-details.component.css */ "./src/app/movie-details/movie-details.component.css")).default]
+    }),
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+], MovieDetailsComponent);
+
+var Genre;
+(function (Genre) {
+    Genre[Genre["comedy"] = 1] = "comedy";
+    Genre[Genre["adventure"] = 2] = "adventure";
+    Genre[Genre["animation"] = 3] = "animation";
+    Genre[Genre["action"] = 4] = "action";
+    Genre[Genre["drama"] = 5] = "drama";
+    Genre[Genre["thriller"] = 6] = "thriller";
+    Genre[Genre["horror"] = 7] = "horror";
+    Genre[Genre["crime"] = 8] = "crime";
+    Genre[Genre["fantasy"] = 9] = "fantasy";
+})(Genre || (Genre = {}));
 
 
 /***/ }),

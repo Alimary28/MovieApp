@@ -40,7 +40,7 @@ namespace MovieApp.Controllers
                          {
                              Id = m.Id,
                              Title = m.Title,
-                             NumberOfComments = m.Comments.Count()
+                             NumberOfComments = m.Comments.Where(c => c.MovieItemId == m.Id).Count()
                          };
 
             return movies;

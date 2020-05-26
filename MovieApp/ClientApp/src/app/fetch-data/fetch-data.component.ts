@@ -6,16 +6,16 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-  public forecasts: WeatherForecast[];
+  //public forecasts: WeatherForecast[];
 
     public movies: MovieItem[];
 
     public comments: Comment[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
+    //http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
+    //  this.forecasts = result;
+    //}, error => console.error(error));
 
     http.get<MovieItem[]>(baseUrl + 'api/MovieItems').subscribe(result => {
       this.movies = result
@@ -29,22 +29,32 @@ export class FetchDataComponent {
   }
 }
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+//interface WeatherForecast {
+//  date: string;
+//  temperatureC: number;
+//  temperatureF: number;
+//  summary: string;
+//}
+enum Genre {
+    comedy=1,
+    adventure=2,
+    animation=3,
+    action=4,
+    drama=5,
+    thriller=6,
+    horror=7,
+    crime=8,
+    fantasy=9
 }
-
 interface MovieItem {
     id: number;
     title: string;
     description: string;
-    genre: string;
+    genre: Genre;
     duration: number;
     releaseYear: number;
     director: string;
-    addedDate: string;
+    addedDate: Date;
     rating: number;
     watched: string;
     numberOfComments: number;
