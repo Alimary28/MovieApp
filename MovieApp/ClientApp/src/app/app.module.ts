@@ -28,7 +28,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'movie-details', component: MovieDetailsComponent }
+      { path: 'movie-details/:id', component: MovieDetailsComponent }
     ])
   ],
   providers: [],

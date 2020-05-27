@@ -1,8 +1,8 @@
 <h3 id="tableLabel">Movie details:</h3>
 
-<p *ngIf="!movies"><em>Loading...</em></p>
+<p *ngIf="!movie"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movies">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="movie">
   <thead>
     <tr>
       <th>Id</th>
@@ -12,13 +12,14 @@
       <th>Duration</th>
       <th>Realease year</th>
       <th>Director</th>
+      <th>Added date</th>
       <th>Rating</th>
       <th>Watched</th>
       <th>Comments</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let movie of movies">
+    <tr>
       <td>{{ movie.id }}</td>
       <td>{{ movie.title }}</td>
       <td>{{ movie.description }}</td>
@@ -26,6 +27,7 @@
       <td>{{ movie.duration }}</td>
       <td>{{ movie.releaseYear }}</td>
       <td>{{ movie.director }}</td>
+      <td>{{ movie.addedDate }}</td>
       <td>{{ movie.rating }}</td>
       <td>{{ movie.watched }}</td>
       <td>{{ movie.comments }}</td>

@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--<h1 id=\"tableLabel\">Weather forecast</h1>-->\r\n<h1 id=\"tableLabel\">Multimedia Center</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<!--<p *ngIf=\"!forecasts\"><em>Loading...</em></p>-->\r\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\r\n\r\n<!--<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"forecasts\">\r\n  <thead>\r\n    <tr>\r\n      <th>Date</th>\r\n      <th>Temp. (C)</th>\r\n      <th>Temp. (F)</th>\r\n      <th>Summary</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let forecast of forecasts\">\r\n      <td>{{ forecast.date }}</td>\r\n      <td>{{ forecast.temperatureC }}</td>\r\n      <td>{{ forecast.temperatureF }}</td>\r\n      <td>{{ forecast.summary }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>-->\r\n<h3>Movies</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Number of comments</th>\r\n      <th colspan=\"4\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.numberOfComments }}</td>\r\n      <td><a [routerLink]=\"['/movie-details']\">Details</a></td>\r\n      <td><a href=\"api/MovieItems\">Add movie</a></td>\r\n      <td><a href=\"api/MovieItems/{{movie.id}}\">Update movie</a></td>\r\n      <td><a href=\"api/MovieItems/{{movie.id}}\">Delete movie</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<h3>Comments</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"comments\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Text</th>\r\n      <th>Important</th>\r\n      <th>MovieId</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let comment of comments\">\r\n      <td>{{ comment.id }}</td>\r\n      <td>{{ comment.text }}</td>\r\n      <td>{{ comment.important }}</td>\r\n      <td>{{ comment.movieId }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1 id=\"tableLabel\">Multimedia Center</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\r\n\r\n<h3>Movies</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Added date</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Number of comments</th>\r\n      <th colspan=\"4\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.addedDate }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.numberOfComments }}</td>\r\n      <td><a routerLink=\"/movie-details/{{movie.id}}\" (click)=\"onSelect(movie)\">Details</a></td>\r\n      <td><a href=\"api/MovieItems\">Add movie</a></td>\r\n      <td><a href=\"api/MovieItems/{{movie.id}}\">Update movie</a></td>\r\n      <td><a href=\"api/MovieItems/{{movie.id}}\">Delete movie</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<h3>Comments</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"comments\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Text</th>\r\n      <th>Important</th>\r\n      <th>MovieId</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let comment of comments\">\r\n      <td>{{ comment.id }}</td>\r\n      <td>{{ comment.text }}</td>\r\n      <td>{{ comment.important }}</td>\r\n      <td>{{ comment.movieId }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n");
 
 /***/ }),
 
@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h3 id=\"tableLabel\">Movie details:</h3>\n\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Comments</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.comments }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3 id=\"tableLabel\">Movie details:</h3>\n\n<p *ngIf=\"!movie\"><em>Loading...</em></p>\n\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movie\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Added date</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Comments</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr>\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.addedDate }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.comments }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\n");
 
 /***/ }),
 
@@ -199,7 +199,7 @@ AppModule = __decorate([
                 { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"], pathMatch: 'full' },
                 { path: 'counter', component: _counter_counter_component__WEBPACK_IMPORTED_MODULE_8__["CounterComponent"] },
                 { path: 'fetch-data', component: _fetch_data_fetch_data_component__WEBPACK_IMPORTED_MODULE_9__["FetchDataComponent"] },
-                { path: 'movie-details', component: _movie_details_movie_details_component__WEBPACK_IMPORTED_MODULE_10__["MovieDetailsComponent"] }
+                { path: 'movie-details/:id', component: _movie_details_movie_details_component__WEBPACK_IMPORTED_MODULE_10__["MovieDetailsComponent"] }
             ])
         ],
         providers: [],
@@ -263,6 +263,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchDataComponent", function() { return FetchDataComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -280,11 +281,10 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 };
 
 
+
 let FetchDataComponent = class FetchDataComponent {
-    constructor(http, baseUrl) {
-        //http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-        //  this.forecasts = result;
-        //}, error => console.error(error));
+    constructor(http, baseUrl, router) {
+        this.router = router;
         http.get(baseUrl + 'api/MovieItems').subscribe(result => {
             this.movies = result;
             console.log(this.movies);
@@ -294,18 +294,29 @@ let FetchDataComponent = class FetchDataComponent {
             console.log(this.comments);
         }, error => console.error(error));
     }
+    onSelect(movie) {
+        this.router.navigate(['/movie-details', movie.Id]);
+    }
 };
 FetchDataComponent.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
-    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] }
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
 ];
 FetchDataComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-fetch-data',
         template: __importDefault(__webpack_require__(/*! raw-loader!./fetch-data.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/fetch-data/fetch-data.component.html")).default
+        //template:`
+        //    <tbody>
+        //        <tr (click)= "onSelect(movie)" *ngFor="let movie of movies">
+        //           <td>{{movie.id}}</td>
+        //        </tr>
+        //    </tbody>
+        //`
     }),
     __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
-    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
 ], FetchDataComponent);
 
 //interface WeatherForecast {
@@ -389,6 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MovieDetailsComponent", function() { return MovieDetailsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -406,9 +418,12 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 };
 
 
+
 let MovieDetailsComponent = class MovieDetailsComponent {
-    constructor(http, baseUrl) {
-        http.get(baseUrl + 'api/MovieItems/{id}').subscribe(result => {
+    constructor(http, baseUrl, route) {
+        this.route = route;
+        const id = parseInt(this.route.snapshot.paramMap.get('id'));
+        http.get(baseUrl + 'api/MovieItems/' + id).subscribe(result => {
             this.movie = result;
             console.log(this.movie);
         }, error => console.error(error));
@@ -416,7 +431,8 @@ let MovieDetailsComponent = class MovieDetailsComponent {
 };
 MovieDetailsComponent.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
-    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] }
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }
 ];
 MovieDetailsComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -425,7 +441,7 @@ MovieDetailsComponent = __decorate([
         styles: [__importDefault(__webpack_require__(/*! ./movie-details.component.css */ "./src/app/movie-details/movie-details.component.css")).default]
     }),
     __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
-    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String])
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
 ], MovieDetailsComponent);
 
 var Genre;

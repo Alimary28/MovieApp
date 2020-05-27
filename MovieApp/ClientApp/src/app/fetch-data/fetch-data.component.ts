@@ -1,21 +1,26 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+    templateUrl: './fetch-data.component.html'
+    //template:`
+    //    <tbody>
+    //        <tr (click)= "onSelect(movie)" *ngFor="let movie of movies">
+    //           <td>{{movie.id}}</td>
+    //        </tr>
+    //    </tbody>
+    //`
 })
 export class FetchDataComponent {
-  //public forecasts: WeatherForecast[];
 
     public movies: MovieItem[];
-
+      
     public comments: Comment[];
+   
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    //http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-    //  this.forecasts = result;
-    //}, error => console.error(error));
+    constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private router: Router) {
 
     http.get<MovieItem[]>(baseUrl + 'api/MovieItems').subscribe(result => {
       this.movies = result
@@ -26,7 +31,11 @@ export class FetchDataComponent {
           this.comments = result
           console.log(this.comments);
       }, error => console.error(error));
-  }
+
+    }
+    onSelect(movie) {
+        this.router.navigate(['/movie-details', movie.Id]);
+    }
 }
 
 //interface WeatherForecast {
