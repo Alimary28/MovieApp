@@ -1,6 +1,5 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-movie-details',

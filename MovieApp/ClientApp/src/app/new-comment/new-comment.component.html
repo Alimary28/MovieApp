@@ -1,0 +1,22 @@
+<p>New-comment:</p>
+
+<form [formGroup]="form"
+      (ngSubmit)="saveComment()">
+  <div class="form-group">
+    <label for="title">Text</label>
+    <input type="text" class="form-control" id="text" name="text" formControlName="text">
+  </div>
+
+  <div class="form-group">
+    <label for="description">Important</label>
+    <input class="radio-button" type="radio" name="important" [value]="true" formControlName="important"> Yes&nbsp;
+    <input class="radio-button" type="radio" name="important" [value]="false" formControlName="important"> No
+  </div>
+
+  <div class="form-group">
+    <label for="description">Movie item id</label>
+    <input type="number" class="form-control" id="movieItemId" name="movieItemId" formControlName="movieItemId">
+  </div>
+
+  <button type="submit" class="btn btn-success">Save comment</button>
+</form>

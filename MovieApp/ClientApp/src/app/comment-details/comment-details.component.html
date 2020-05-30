@@ -1,0 +1,22 @@
+<p>Comment-details:</p>
+
+<p *ngIf="!comment"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="comment">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Text</th>
+      <th>Important</th>
+      <th>MovieId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ comment.id }}</td>
+      <td>{{ comment.text }}</td>
+      <td>{{ comment.important }}</td>
+      <td>{{ comment.movieItemId }}</td>
+    </tr>
+  </tbody>
+</table>
