@@ -16,27 +16,38 @@ export class UpdateMovieComponent {
   public genre = ['comedy', 'adventure', 'animation', 'action', ' drama', 'thriller', '  horror', 'crime', 'fantasy'];
   public watched = ['yes', 'no'];
   public titleOperations = 'create';
-  form: FormGroup;
+  form: FormGroup = new FormGroup({
+    title: new FormControl(''),
+    description: new FormControl(''),
+    genre: new FormControl(''),
+    duration: new FormControl(''),
+    releaseYear: new FormControl(''),
+    director: new FormControl(''),
+    addedDate: new FormControl(''),
+    rating: new FormControl(''),
+    watched: new FormControl('')
+  });
   httpHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router) {
     //const id = parseInt(this.route.snapshot.paramMap.get('id'));
     http.get<MovieItem>(baseUrl + 'api/MovieItems/' + this.id).subscribe(result => {
       this.movie = result
+      this.form = this.formBuilder.group({
+          id: this.id,
+          title: new FormControl(this.movie.title),
+          description: new FormControl(this.movie.description),
+          genre: new FormControl(this.movie.genre),
+          duration: new FormControl(this.movie.duration),
+          releaseYear: new FormControl(this.movie.releaseYear),
+          director: new FormControl(this.movie.director),
+          addedDate: new FormControl(this.movie.addedDate),
+          rating: new FormControl(this.movie.rating),
+          watched: new FormControl(this.movie.watched)
+      });
       console.log(this.movie);
     }, error => console.error(error));
-    this.form = this.formBuilder.group({
-      id: this.id,
-      title: new FormControl(''),
-      description: new FormControl(''),
-      genre: new FormControl('action'),
-      duration: new FormControl(''),
-      releaseYear: new FormControl(''),
-      director: new FormControl(''),
-      addedDate: new FormControl(''),
-      rating: new FormControl(''),
-      watched: new FormControl('yes')
-    });
+
 
   }
   onSubmit() {
