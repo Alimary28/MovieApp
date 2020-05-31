@@ -11,7 +11,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class NewMovieComponent {
 
   public movie: MovieItem;
-
+  public errorMessage = [];
   public genre = ['comedy', 'adventure', 'animation', 'action', ' drama', 'thriller', '  horror', 'crime', 'fantasy'];
   public watched = ['yes', 'no'];
 
@@ -38,7 +38,8 @@ export class NewMovieComponent {
     this.http.post<MovieItem>('https://localhost:5001/api/movieItems', this.form.value).subscribe(data => {
       console.log(data);
       this.router.navigate(['/fetch-data']);
-    });   
+    },
+      err => this.errorMessage = err.error.errors);   
   
   }
 

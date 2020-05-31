@@ -5,6 +5,7 @@
   <div class="form-group">
     <label for="title">Text</label>
     <input type="text" class="form-control" id="text" name="text" formControlName="text">
+    <span *ngIf="errorMessage.Text" class="text-danger"><small>{{errorMessage.Text}}</small> </span>
   </div>
 
   <div class="form-group">

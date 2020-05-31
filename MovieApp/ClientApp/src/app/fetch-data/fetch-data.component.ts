@@ -28,15 +28,15 @@ export class FetchDataComponent {
 
     }
     onSelect(movie) {
-        this.router.navigate(['/movie-details', movie.Id]);
+        this.router.navigate(['/movie-details', movie.id]);
     }
 
     onClick(movie) {
-      this.router.navigate(['/update-movie', movie.Id]);
+      this.router.navigate(['/update-movie', movie.id]);
   }
 
     deleteMovie(movie) {
-      this.router.navigate(['/delete-movie', movie.Id]);
+      this.router.navigate(['/delete-movie', movie.id]);
     }
 
     addMovie() {
@@ -44,15 +44,15 @@ export class FetchDataComponent {
     }
 
     onDetails(comment) {
-      this.router.navigate(['/comment-details', comment.Id]);
+      this.router.navigate(['/comment-details', comment.id]);
     }
 
-    onUpdate(comment) {
-      this.router.navigate(['/update-comment', comment.Id]);
+    updateComment(comment) {
+      this.router.navigate(['/update-comment', comment.id]);
     }
 
     onDelete(comment) {
-      this.router.navigate(['/delete-comment', comment.Id]);
+      this.router.navigate(['/delete-comment', comment.id]);
     }
 
     addComment() {

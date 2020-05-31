@@ -2,19 +2,18 @@
 
 <form [formGroup]="form"
       (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="title">Id</label>
-    <input type="number" class="form-control" id="id" name="id" formControlName="id">
-  </div>
 
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" formControlName="title">
+    <span *ngIf="errorMessage.title" class="text-danger"><small>{{errorMessage.title}}</small> </span>
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" formControlName="description">
+    <span *ngIf="errorMessage.description" class="text-danger"><small>{{errorMessage.description}}</small> </span>
+
   </div>
 
   <div class="form-group">
@@ -27,6 +26,7 @@
   <div class="form-group">
     <label for="duration">Duration</label>
     <input type="number" class="form-control" id="duration" name="duration" formControlName="duration">
+    <span *ngIf="errorMessage.duration" class="text-danger"><small>{{errorMessage.duration}}</small> </span>
   </div>
 
   <div class="form-group">
@@ -42,11 +42,13 @@
   <div class="form-group">
     <label for="addedDate">Added date</label>
     <input type="text" class="form-control" id="addedDate" name="addedDate" formControlName="addedDate">
+    <span *ngIf="errorMessage.addedDate" class="text-danger"><small>{{errorMessage.addedDate}}</small> </span>
   </div>
 
   <div class="form-group">
     <label for="rating">Rating</label>
     <input type="number" class="form-control" id="rating" name="rating" formControlName="rating">
+    <span *ngIf="errorMessage.rating" class="text-danger"><small>{{errorMessage.rating}}</small> </span>
   </div>
 
   <div class="form-group">
@@ -56,7 +58,7 @@
     </select>
   </div>
 
-  <button type="submit" class="btn btn-success">Save movie</button>
+  <button type="submit" class="btn btn-success">Update!</button>
 
 </form>
 

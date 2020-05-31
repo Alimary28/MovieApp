@@ -1,1 +1,25 @@
-<p>delete-comment works!</p>
+<h3>Delete-comment:</h3>
+
+<div>
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Text</th>
+        <th>Important</th>
+        <th>MovieItemId</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ comment.id }}</td>
+        <td>{{ comment.text }}</td>
+        <td>{{ comment.important }}</td>
+        <td>{{ comment.movieItemId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <button type="submit" (click)="deleteComment()">Delete comment</button>
+</div>

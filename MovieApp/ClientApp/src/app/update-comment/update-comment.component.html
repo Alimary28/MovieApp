@@ -1,1 +1,23 @@
-<p>update-comment works!</p>
+<p>Update-comment:</p>
+
+<form [formGroup]="form"
+      (ngSubmit)="updateComment()">
+  <div class="form-group">
+    <label for="text">Text</label>
+    <input type="text" class="form-control" id="text" name="text" formControlName="text">
+    <span *ngIf="errorMessage.Text" class="text-danger"><small>{{errorMessage.Text}}</small> </span>
+  </div>
+
+  <div class="form-group">
+    <label for="important">Important</label><br>
+    <input class="radio-button" type="radio" name="important" [value]="true" formControlName="important"> Yes&nbsp;
+    <input class="radio-button" type="radio" name="important" [value]="false" formControlName="important"> No
+  </div>
+
+  <div class="form-group">
+    <label for="movieItemId">Movie item id</label>
+    <input type="number" class="form-control" id="movieItemId" name="movieItemId" formControlName="movieItemId">
+  </div>
+
+  <button type="submit" class="btn btn-success">Update</button>
+</form>

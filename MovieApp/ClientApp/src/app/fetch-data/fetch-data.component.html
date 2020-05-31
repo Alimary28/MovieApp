@@ -6,7 +6,7 @@
 <p *ngIf="!movies"><em>Loading...</em></p>
 
 <div>
-  <span>Filter movies by Added date</span>
+  <span>Filter movies by Added date </span>
   <label>
     from
     <input #startDate type="date" class="mx-2">
@@ -85,7 +85,7 @@
       <td>{{ comment.important }}</td>
       <td>{{ comment.movieItemId }}</td>
       <td><a routerLink="/comment-details/{{comment.id}}" (click)="onDetails(comment)">Details</a></td>
-      <td><a routerLink="/update-comment/{{comment.id}}" (click)="onUpdate(comment)">Update</a></td>
+      <td><a routerLink="/update-comment/{{comment.id}}" (click)="updateComment(comment)">Update</a></td>
       <td><a routerLink="/delete-comment/{{comment.id}}" (click)="onDelete(comment)">Delete</a></td>
     </tr>
   </tbody>

@@ -11,6 +11,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class UpdateMovieComponent {
 
   public movie: MovieItem;
+  public errorMessage = [];
   public id = parseInt(this.route.snapshot.paramMap.get('id'));
   public genre = ['comedy', 'adventure', 'animation', 'action', ' drama', 'thriller', '  horror', 'crime', 'fantasy'];
   public watched = ['yes', 'no'];
@@ -25,7 +26,7 @@ export class UpdateMovieComponent {
       console.log(this.movie);
     }, error => console.error(error));
     this.form = this.formBuilder.group({
-      id: new FormControl(''),
+      id: this.id,
       title: new FormControl(''),
       description: new FormControl(''),
       genre: new FormControl('action'),
@@ -45,7 +46,8 @@ export class UpdateMovieComponent {
     }).subscribe(data => {
       console.log(data);
       this.router.navigate(['/fetch-data']);
-    });
+    },
+      err => this.errorMessage = err.error.errors);
 
   }
 

@@ -11,12 +11,12 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class NewCommentComponent {
 
   public comment: Comment;
+  public errorMessage = [];
   form: FormGroup;
 
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string, private formBuilder: FormBuilder, private router: Router) {
     this.form = this.formBuilder.group({
-      id: 0,
       text: new FormControl(''),
       important: new FormControl(true),
       movieItemId: new FormControl('')
@@ -27,7 +27,9 @@ export class NewCommentComponent {
     this.http.post<Comment>('https://localhost:5001/api/Comments', this.form.value).subscribe(data => {
       console.log(data);
       this.router.navigate(['/fetch-data']);
-    });
+    },
+      err => this.errorMessage = err.error.errors
+    );
 
   }
 

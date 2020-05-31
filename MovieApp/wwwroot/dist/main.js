@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>delete-comment works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Delete-comment:</h3>\r\n\r\n<div>\r\n  <table class='table table-striped' aria-labelledby=\"tableLabel\">\r\n    <thead>\r\n      <tr>\r\n        <th>Id</th>\r\n        <th>Text</th>\r\n        <th>Important</th>\r\n        <th>MovieItemId</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr>\r\n        <td>{{ comment.id }}</td>\r\n        <td>{{ comment.text }}</td>\r\n        <td>{{ comment.important }}</td>\r\n        <td>{{ comment.movieItemId }}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n<div>\r\n  <button type=\"submit\" (click)=\"deleteComment()\">Delete comment</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -74,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1 id=\"tableLabel\">Multimedia Center</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\r\n\r\n<div>\r\n  <span>Filter movies by Added date</span>\r\n  <label>\r\n    from\r\n    <input #startDate type=\"date\" class=\"mx-2\">\r\n    <input #startTime type=\"time\" class=\"mx-2\">\r\n  </label>\r\n  <label>\r\n    to\r\n    <input #endDate type=\"date\" class=\"mx-2\">\r\n    <input #endTime type=\"time\" class=\"mx-2\">\r\n  </label>\r\n  <div class=\"d-inline px-3\">\r\n    <button class=\"btn btn-sm btn-outline-primary\"\r\n            type=\"button\"\r\n            (click)=\"filterMovies(startDate.value, startTime.value, endDate.value, endTime.value)\">\r\n      Filter Movies\r\n    </button>\r\n  </div>\r\n</div>\r\n\r\n<h3>Movies</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Added date</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Number of comments</th>\r\n      <th colspan=\"3\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.addedDate }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.numberOfComments }}</td>\r\n      <td><a routerLink=\"/movie-details/{{movie.id}}\" (click)=\"onSelect(movie)\">Details</a></td>\r\n      <td><a routerLink=\"/update-movie/{{movie.id}}\" (click)=\"onClick(movie)\">Update</a></td>\r\n      <td><a routerLink=\"/delete-movie/{{movie.id}}\" (click)=\"deleteMovie(movie)\">Delete</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<div>\r\n  <a routerLink=\"/new-movie\" (click)=\"addMovie()\">Add movie</a>\r\n</div>\r\n\r\n<h3>Comments</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"comments\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Text</th>\r\n      <th>Important</th>\r\n      <th>MovieId</th>\r\n      <th colspan=\"3\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let comment of comments\">\r\n      <td>{{ comment.id }}</td>\r\n      <td>{{ comment.text }}</td>\r\n      <td>{{ comment.important }}</td>\r\n      <td>{{ comment.movieItemId }}</td>\r\n      <td><a routerLink=\"/comment-details/{{comment.id}}\" (click)=\"onDetails(comment)\">Details</a></td>\r\n      <td><a routerLink=\"/update-comment/{{comment.id}}\" (click)=\"onUpdate(comment)\">Update</a></td>\r\n      <td><a routerLink=\"/delete-comment/{{comment.id}}\" (click)=\"onDelete(comment)\">Delete</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<div>\r\n  <a routerLink=\"/new-comment\" (click)=\"addComment()\">Add comment</a>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n<h1 id=\"tableLabel\">Multimedia Center</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<p *ngIf=\"!movies\"><em>Loading...</em></p>\r\n\r\n<div>\r\n  <span>Filter movies by Added date </span>\r\n  <label>\r\n    from\r\n    <input #startDate type=\"date\" class=\"mx-2\">\r\n    <input #startTime type=\"time\" class=\"mx-2\">\r\n  </label>\r\n  <label>\r\n    to\r\n    <input #endDate type=\"date\" class=\"mx-2\">\r\n    <input #endTime type=\"time\" class=\"mx-2\">\r\n  </label>\r\n  <div class=\"d-inline px-3\">\r\n    <button class=\"btn btn-sm btn-outline-primary\"\r\n            type=\"button\"\r\n            (click)=\"filterMovies(startDate.value, startTime.value, endDate.value, endTime.value)\">\r\n      Filter Movies\r\n    </button>\r\n  </div>\r\n</div>\r\n\r\n<h3>Movies</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"movies\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Title</th>\r\n      <th>Description</th>\r\n      <th>Genre</th>\r\n      <th>Duration</th>\r\n      <th>Realease year</th>\r\n      <th>Director</th>\r\n      <th>Added date</th>\r\n      <th>Rating</th>\r\n      <th>Watched</th>\r\n      <th>Number of comments</th>\r\n      <th colspan=\"3\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let movie of movies\">\r\n      <td>{{ movie.id }}</td>\r\n      <td>{{ movie.title }}</td>\r\n      <td>{{ movie.description }}</td>\r\n      <td>{{ movie.genre }}</td>\r\n      <td>{{ movie.duration }}</td>\r\n      <td>{{ movie.releaseYear }}</td>\r\n      <td>{{ movie.director }}</td>\r\n      <td>{{ movie.addedDate }}</td>\r\n      <td>{{ movie.rating }}</td>\r\n      <td>{{ movie.watched }}</td>\r\n      <td>{{ movie.numberOfComments }}</td>\r\n      <td><a routerLink=\"/movie-details/{{movie.id}}\" (click)=\"onSelect(movie)\">Details</a></td>\r\n      <td><a routerLink=\"/update-movie/{{movie.id}}\" (click)=\"onClick(movie)\">Update</a></td>\r\n      <td><a routerLink=\"/delete-movie/{{movie.id}}\" (click)=\"deleteMovie(movie)\">Delete</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<div>\r\n  <a routerLink=\"/new-movie\" (click)=\"addMovie()\">Add movie</a>\r\n</div>\r\n\r\n<h3>Comments</h3>\r\n<table class='table table-striped' aria-labelledby=\"tableLabel\" *ngIf=\"comments\">\r\n  <thead>\r\n    <tr>\r\n      <th>Id</th>\r\n      <th>Text</th>\r\n      <th>Important</th>\r\n      <th>MovieId</th>\r\n      <th colspan=\"3\">Operations</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let comment of comments\">\r\n      <td>{{ comment.id }}</td>\r\n      <td>{{ comment.text }}</td>\r\n      <td>{{ comment.important }}</td>\r\n      <td>{{ comment.movieItemId }}</td>\r\n      <td><a routerLink=\"/comment-details/{{comment.id}}\" (click)=\"onDetails(comment)\">Details</a></td>\r\n      <td><a routerLink=\"/update-comment/{{comment.id}}\" (click)=\"updateComment(comment)\">Update</a></td>\r\n      <td><a routerLink=\"/delete-comment/{{comment.id}}\" (click)=\"onDelete(comment)\">Delete</a></td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<div>\r\n  <a routerLink=\"/new-comment\" (click)=\"addComment()\">Add comment</a>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>New-comment:</p>\n\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"saveComment()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Text</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"text\" name=\"text\" formControlName=\"text\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Important</label>\r\n    <input class=\"radio-button\" type=\"radio\" name=\"important\" [value]=\"true\" formControlName=\"important\"> Yes&nbsp;\r\n    <input class=\"radio-button\" type=\"radio\" name=\"important\" [value]=\"false\" formControlName=\"important\"> No\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Movie item id</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"movieItemId\" name=\"movieItemId\" formControlName=\"movieItemId\">\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Save comment</button>\r\n</form>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>New-comment:</p>\n\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"saveComment()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Text</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"text\" name=\"text\" formControlName=\"text\">\r\n    <span *ngIf=\"errorMessage.Text\" class=\"text-danger\"><small>{{errorMessage.Text}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Important</label>\r\n    <input class=\"radio-button\" type=\"radio\" name=\"important\" [value]=\"true\" formControlName=\"important\"> Yes&nbsp;\r\n    <input class=\"radio-button\" type=\"radio\" name=\"important\" [value]=\"false\" formControlName=\"important\"> No\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Movie item id</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"movieItemId\" name=\"movieItemId\" formControlName=\"movieItemId\">\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Save comment</button>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -139,7 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>New-movie:</p>\r\n\r\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Title</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" formControlName=\"title\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Description</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"genre\">Genre</label>\r\n    <select class=\"form-control\" id=\"genre\" name=\"genre\" formControlName=\"genre\">\r\n      <option *ngFor=\"let i of genre\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"duration\">Duration</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"duration\" name=\"duration\" formControlName=\"duration\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"releaseYear\">Release year</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"releaseYear\" name=\"releaseYear\" formControlName=\"releaseYear\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"director\">Director</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"director\" name=\"director\" formControlName=\"director\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"addedDate\">Added date</label>\r\n    <input type=\"date\" class=\"form-control\" id=\"addedDate\" name=\"addedDate\" formControlName=\"addedDate\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"rating\">Rating</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"rating\" name=\"rating\" formControlName=\"rating\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"watched\">Watched</label>\r\n    <select class=\"form-control\" id=\"watched\" name=\"watched\" formControlName=\"watched\">\r\n      <option *ngFor=\"let i of watched\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Save movie</button>\r\n\r\n</form>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>New-movie:</p>\r\n\r\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Title</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" formControlName=\"title\">\r\n    <span *ngIf=\"errorMessage.Title\" class=\"text-danger\"><small>{{errorMessage.Title}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Description</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n    <span *ngIf=\"errorMessage.Description\" class=\"text-danger\"><small>{{errorMessage.Description}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"genre\">Genre</label>\r\n    <select class=\"form-control\" id=\"genre\" name=\"genre\" formControlName=\"genre\">\r\n      <option *ngFor=\"let i of genre\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"duration\">Duration</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"duration\" name=\"duration\" formControlName=\"duration\">\r\n    <span *ngIf=\"errorMessage.Duration\" class=\"text-danger\"><small>{{errorMessage.Duration}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"releaseYear\">Release year</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"releaseYear\" name=\"releaseYear\" formControlName=\"releaseYear\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"director\">Director</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"director\" name=\"director\" formControlName=\"director\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"addedDate\">Added date</label>\r\n    <input type=\"date\" class=\"form-control\" id=\"addedDate\" name=\"addedDate\" formControlName=\"addedDate\">\r\n    <span *ngIf=\"errorMessage.AddedDate\" class=\"text-danger\"><small>{{errorMessage.AddedDate}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"rating\">Rating</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"rating\" name=\"rating\" formControlName=\"rating\">\r\n    <span *ngIf=\"errorMessage.Rating\" class=\"text-danger\"><small>{{errorMessage.Rating}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"watched\">Watched</label>\r\n    <select class=\"form-control\" id=\"watched\" name=\"watched\" formControlName=\"watched\">\r\n      <option *ngFor=\"let i of watched\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Save movie</button>\r\n\r\n</form>\r\n\r\n");
 
 /***/ }),
 
@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>update-comment works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Update-comment:</p>\r\n\r\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"updateComment()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"text\">Text</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"text\" name=\"text\" formControlName=\"text\">\r\n    <span *ngIf=\"errorMessage.Text\" class=\"text-danger\"><small>{{errorMessage.Text}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"important\">Important</label><br>\r\n    <input class=\"radio-button\" type=\"radio\" name=\"important\" [value]=\"true\" formControlName=\"important\"> Yes&nbsp;\r\n    <input class=\"radio-button\" type=\"radio\" name=\"important\" [value]=\"false\" formControlName=\"important\"> No\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"movieItemId\">Movie item id</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"movieItemId\" name=\"movieItemId\" formControlName=\"movieItemId\">\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Update</button>\r\n</form>\r\n");
 
 /***/ }),
 
@@ -165,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>Update-movie:</p>\r\n\r\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Id</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"id\" name=\"id\" formControlName=\"id\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Title</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" formControlName=\"title\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Description</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"genre\">Genre</label>\r\n    <select class=\"form-control\" id=\"genre\" name=\"genre\" formControlName=\"genre\">\r\n      <option *ngFor=\"let i of genre\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"duration\">Duration</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"duration\" name=\"duration\" formControlName=\"duration\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"releaseYear\">Release year</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"releaseYear\" name=\"releaseYear\" formControlName=\"releaseYear\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"director\">Director</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"director\" name=\"director\" formControlName=\"director\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"addedDate\">Added date</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"addedDate\" name=\"addedDate\" formControlName=\"addedDate\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"rating\">Rating</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"rating\" name=\"rating\" formControlName=\"rating\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"watched\">Watched</label>\r\n    <select class=\"form-control\" id=\"watched\" name=\"watched\" formControlName=\"watched\">\r\n      <option *ngFor=\"let i of watched\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Save movie</button>\r\n\r\n</form>\r\n\r\n<div>\r\n  <!--<table class='table table-striped' aria-labelledby=\"tableLabel\">\r\n    <thead>\r\n      <tr>\r\n        <th>Id</th>\r\n        <th>Title</th>\r\n        <th>Description</th>\r\n        <th>Genre</th>\r\n        <th>Duration</th>\r\n        <th>Realease year</th>\r\n        <th>Director</th>\r\n        <th>Added date</th>\r\n        <th>Rating</th>\r\n        <th>Watched</th>\r\n        <th>Comments</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr>\r\n        <td>{{ movie.id }}</td>\r\n        <td>{{ movie.title }}</td>\r\n        <td>{{ movie.description }}</td>\r\n        <td>{{ movie.genre }}</td>\r\n        <td>{{ movie.duration }}</td>\r\n        <td>{{ movie.releaseYear }}</td>\r\n        <td>{{ movie.director }}</td>\r\n        <td>{{ movie.addedDate }}</td>\r\n        <td>{{ movie.rating }}</td>\r\n        <td>{{ movie.watched }}</td>\r\n        <td>{{ movie.comments }}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>-->\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>Update-movie:</p>\r\n\r\n<form [formGroup]=\"form\"\r\n      (ngSubmit)=\"onSubmit()\">\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"title\">Title</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"title\" name=\"title\" formControlName=\"title\">\r\n    <span *ngIf=\"errorMessage.title\" class=\"text-danger\"><small>{{errorMessage.title}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"description\">Description</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"description\" name=\"description\" formControlName=\"description\">\r\n    <span *ngIf=\"errorMessage.description\" class=\"text-danger\"><small>{{errorMessage.description}}</small> </span>\r\n\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"genre\">Genre</label>\r\n    <select class=\"form-control\" id=\"genre\" name=\"genre\" formControlName=\"genre\">\r\n      <option *ngFor=\"let i of genre\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"duration\">Duration</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"duration\" name=\"duration\" formControlName=\"duration\">\r\n    <span *ngIf=\"errorMessage.duration\" class=\"text-danger\"><small>{{errorMessage.duration}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"releaseYear\">Release year</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"releaseYear\" name=\"releaseYear\" formControlName=\"releaseYear\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"director\">Director</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"director\" name=\"director\" formControlName=\"director\">\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"addedDate\">Added date</label>\r\n    <input type=\"text\" class=\"form-control\" id=\"addedDate\" name=\"addedDate\" formControlName=\"addedDate\">\r\n    <span *ngIf=\"errorMessage.addedDate\" class=\"text-danger\"><small>{{errorMessage.addedDate}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"rating\">Rating</label>\r\n    <input type=\"number\" class=\"form-control\" id=\"rating\" name=\"rating\" formControlName=\"rating\">\r\n    <span *ngIf=\"errorMessage.rating\" class=\"text-danger\"><small>{{errorMessage.rating}}</small> </span>\r\n  </div>\r\n\r\n  <div class=\"form-group\">\r\n    <label for=\"watched\">Watched</label>\r\n    <select class=\"form-control\" id=\"watched\" name=\"watched\" formControlName=\"watched\">\r\n      <option *ngFor=\"let i of watched\" [value]=\"i\">{{i}}</option>\r\n    </select>\r\n  </div>\r\n\r\n  <button type=\"submit\" class=\"btn btn-success\">Update!</button>\r\n\r\n</form>\r\n\r\n<div>\r\n  <!--<table class='table table-striped' aria-labelledby=\"tableLabel\">\r\n    <thead>\r\n      <tr>\r\n        <th>Id</th>\r\n        <th>Title</th>\r\n        <th>Description</th>\r\n        <th>Genre</th>\r\n        <th>Duration</th>\r\n        <th>Realease year</th>\r\n        <th>Director</th>\r\n        <th>Added date</th>\r\n        <th>Rating</th>\r\n        <th>Watched</th>\r\n        <th>Comments</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr>\r\n        <td>{{ movie.id }}</td>\r\n        <td>{{ movie.title }}</td>\r\n        <td>{{ movie.description }}</td>\r\n        <td>{{ movie.genre }}</td>\r\n        <td>{{ movie.duration }}</td>\r\n        <td>{{ movie.releaseYear }}</td>\r\n        <td>{{ movie.director }}</td>\r\n        <td>{{ movie.addedDate }}</td>\r\n        <td>{{ movie.rating }}</td>\r\n        <td>{{ movie.watched }}</td>\r\n        <td>{{ movie.comments }}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>-->\r\n</div>\r\n");
 
 /***/ }),
 
@@ -474,6 +474,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeleteCommentComponent", function() { return DeleteCommentComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -483,22 +485,47 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 
+
+
 let DeleteCommentComponent = class DeleteCommentComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor(http, baseUrl, route, router) {
+        this.http = http;
+        this.route = route;
+        this.router = router;
+        this.id = this.route.snapshot.paramMap.get('id');
+        http.get(baseUrl + 'api/Comments/' + this.id).subscribe(result => {
+            this.comment = result;
+            console.log(this.comment);
+        }, error => console.error(error));
+    }
+    deleteComment() {
+        this.http.delete('https://localhost:5001/api/Comments' + '/' + this.id).subscribe(result => {
+            console.log(result);
+            this.router.navigate(['/fetch-data']);
+        }, error => console.error(error));
     }
 };
+DeleteCommentComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 DeleteCommentComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-delete-comment',
         template: __importDefault(__webpack_require__(/*! raw-loader!./delete-comment.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/delete-comment/delete-comment.component.html")).default,
         styles: [__importDefault(__webpack_require__(/*! ./delete-comment.component.css */ "./src/app/delete-comment/delete-comment.component.css")).default]
     }),
-    __metadata("design:paramtypes", [])
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
 ], DeleteCommentComponent);
 
 
@@ -644,25 +671,25 @@ let FetchDataComponent = class FetchDataComponent {
         }, error => console.error(error));
     }
     onSelect(movie) {
-        this.router.navigate(['/movie-details', movie.Id]);
+        this.router.navigate(['/movie-details', movie.id]);
     }
     onClick(movie) {
-        this.router.navigate(['/update-movie', movie.Id]);
+        this.router.navigate(['/update-movie', movie.id]);
     }
     deleteMovie(movie) {
-        this.router.navigate(['/delete-movie', movie.Id]);
+        this.router.navigate(['/delete-movie', movie.id]);
     }
     addMovie() {
         this.router.navigate(['/new-movie']);
     }
     onDetails(comment) {
-        this.router.navigate(['/comment-details', comment.Id]);
+        this.router.navigate(['/comment-details', comment.id]);
     }
-    onUpdate(comment) {
-        this.router.navigate(['/update-comment', comment.Id]);
+    updateComment(comment) {
+        this.router.navigate(['/update-comment', comment.id]);
     }
     onDelete(comment) {
-        this.router.navigate(['/delete-comment', comment.Id]);
+        this.router.navigate(['/delete-comment', comment.id]);
     }
     addComment() {
         this.router.navigate(['/new-comment']);
@@ -944,8 +971,8 @@ let NewCommentComponent = class NewCommentComponent {
         this.http = http;
         this.formBuilder = formBuilder;
         this.router = router;
+        this.errorMessage = [];
         this.form = this.formBuilder.group({
-            id: 0,
             text: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
             important: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](true),
             movieItemId: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('')
@@ -955,7 +982,7 @@ let NewCommentComponent = class NewCommentComponent {
         this.http.post('https://localhost:5001/api/Comments', this.form.value).subscribe(data => {
             console.log(data);
             this.router.navigate(['/fetch-data']);
-        });
+        }, err => this.errorMessage = err.error.errors);
     }
 };
 NewCommentComponent.ctorParameters = () => [
@@ -1029,6 +1056,7 @@ let NewMovieComponent = class NewMovieComponent {
         this.http = http;
         this.formBuilder = formBuilder;
         this.router = router;
+        this.errorMessage = [];
         this.genre = ['comedy', 'adventure', 'animation', 'action', ' drama', 'thriller', '  horror', 'crime', 'fantasy'];
         this.watched = ['yes', 'no'];
         this.form = this.formBuilder.group({
@@ -1048,7 +1076,7 @@ let NewMovieComponent = class NewMovieComponent {
         this.http.post('https://localhost:5001/api/movieItems', this.form.value).subscribe(data => {
             console.log(data);
             this.router.navigate(['/fetch-data']);
-        });
+        }, err => this.errorMessage = err.error.errors);
     }
 };
 NewMovieComponent.ctorParameters = () => [
@@ -1107,6 +1135,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateCommentComponent", function() { return UpdateCommentComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1116,22 +1147,60 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 
+
+
+
 let UpdateCommentComponent = class UpdateCommentComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor(http, baseUrl, route, formBuilder, router) {
+        this.http = http;
+        this.route = route;
+        this.formBuilder = formBuilder;
+        this.router = router;
+        this.errorMessage = [];
+        this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+        this.httpHeader = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' });
+        http.get(baseUrl + 'api/Comments/' + this.id).subscribe(result => {
+            this.comment = result;
+            console.log(this.comment);
+        }, error => console.error(error));
+        this.form = this.formBuilder.group({
+            id: this.id,
+            text: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](''),
+            important: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](true),
+            movieItemId: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('')
+        });
+    }
+    updateComment() {
+        this.http.put('https://localhost:5001/api/Comments/' + this.id, this.form.value, {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' })
+        }).subscribe(data => {
+            console.log(data);
+            this.router.navigate(['/fetch-data']);
+        }, err => this.errorMessage = err.error.errors);
     }
 };
+UpdateCommentComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: ['BASE_URL',] }] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 UpdateCommentComponent = __decorate([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
         selector: 'app-update-comment',
         template: __importDefault(__webpack_require__(/*! raw-loader!./update-comment.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/update-comment/update-comment.component.html")).default,
         styles: [__importDefault(__webpack_require__(/*! ./update-comment.component.css */ "./src/app/update-comment/update-comment.component.css")).default]
     }),
-    __metadata("design:paramtypes", [])
+    __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('BASE_URL')),
+    __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], String, _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
 ], UpdateCommentComponent);
 
 
@@ -1190,6 +1259,7 @@ let UpdateMovieComponent = class UpdateMovieComponent {
         this.route = route;
         this.formBuilder = formBuilder;
         this.router = router;
+        this.errorMessage = [];
         this.id = parseInt(this.route.snapshot.paramMap.get('id'));
         this.genre = ['comedy', 'adventure', 'animation', 'action', ' drama', 'thriller', '  horror', 'crime', 'fantasy'];
         this.watched = ['yes', 'no'];
@@ -1201,7 +1271,7 @@ let UpdateMovieComponent = class UpdateMovieComponent {
             console.log(this.movie);
         }, error => console.error(error));
         this.form = this.formBuilder.group({
-            id: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            id: this.id,
             title: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
             description: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
             genre: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('action'),
@@ -1219,7 +1289,7 @@ let UpdateMovieComponent = class UpdateMovieComponent {
         }).subscribe(data => {
             console.log(data);
             this.router.navigate(['/fetch-data']);
-        });
+        }, err => this.errorMessage = err.error.errors);
     }
 };
 UpdateMovieComponent.ctorParameters = () => [

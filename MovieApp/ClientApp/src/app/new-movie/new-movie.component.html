@@ -5,11 +5,13 @@
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" formControlName="title">
+    <span *ngIf="errorMessage.Title" class="text-danger"><small>{{errorMessage.Title}}</small> </span>
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" formControlName="description">
+    <span *ngIf="errorMessage.Description" class="text-danger"><small>{{errorMessage.Description}}</small> </span>
   </div>
 
   <div class="form-group">
@@ -22,6 +24,7 @@
   <div class="form-group">
     <label for="duration">Duration</label>
     <input type="number" class="form-control" id="duration" name="duration" formControlName="duration">
+    <span *ngIf="errorMessage.Duration" class="text-danger"><small>{{errorMessage.Duration}}</small> </span>
   </div>
 
   <div class="form-group">
@@ -37,11 +40,13 @@
   <div class="form-group">
     <label for="addedDate">Added date</label>
     <input type="date" class="form-control" id="addedDate" name="addedDate" formControlName="addedDate">
+    <span *ngIf="errorMessage.AddedDate" class="text-danger"><small>{{errorMessage.AddedDate}}</small> </span>
   </div>
 
   <div class="form-group">
     <label for="rating">Rating</label>
     <input type="number" class="form-control" id="rating" name="rating" formControlName="rating">
+    <span *ngIf="errorMessage.Rating" class="text-danger"><small>{{errorMessage.Rating}}</small> </span>
   </div>
 
   <div class="form-group">

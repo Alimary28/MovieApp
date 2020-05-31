@@ -10,6 +10,7 @@ namespace MovieApp.ModelValidators
     {
         public MovieValidator() 
         {
+            RuleFor(x => x.Title).Length(2, 25);
             RuleFor(x => x.Rating).InclusiveBetween(1, 10);
             RuleFor(x => x.Duration).GreaterThan(80);
             RuleFor(x => x.Description)
