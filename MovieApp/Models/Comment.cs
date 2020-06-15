@@ -12,5 +12,6 @@ namespace MovieApp.Models
         public bool Important { get; set; }
         public MovieItem MovieItem { get; set; }
         public long MovieItemId { get; set; }
+        public User AddedBy { get; set; }
     }
 }

@@ -31,6 +31,8 @@ public class MovieItem
 	public string Watched { get; set; }
 
 	public bool isWatched;
+
+	public User AddedBy { get; set; }
 	public List<Comment> Comments { get; set; }
 
 	public int NumberOfComments { get; }

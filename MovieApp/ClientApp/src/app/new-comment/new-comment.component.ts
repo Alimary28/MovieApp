@@ -28,8 +28,7 @@ export class NewCommentComponent {
       console.log(data);
       this.router.navigate(['/fetch-data']);
     },
-      err => this.errorMessage = err.error.errors
-    );
+      err => this.errorMessage = err.error.errors);
 
   }
 

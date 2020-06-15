@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using MovieApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,18 @@ namespace MovieApp.Models
         {
             using (var context = new MovieContext(serviceProvider.GetRequiredService<DbContextOptions<MovieContext>>()))
             {
+                if (!context.Users.Any())
+                {
+                    context.Users.Add(new User
+                    {
+                        FirstName = "First",
+                        LastName = "Last",
+                        Username = "FirstUser",
+                        Password = HashUtils.GetHashString("parolasigura")
+                    });
+                    context.SaveChanges();
+                }
+
                 // Look for any movies.
                 if (context.MovieItems.Any())
                 {
